@@ -31,10 +31,14 @@ input {
 }
 input:hover {
   background: #fff;
+
   color: #444;
 }
 input:active {
   box-shadow: 0px 0px 12px 0px rgba(225, 225, 225, 1);
+}
+.submit-btn {
+  border-left: 1px solid rgb(0, 0, 0);
 }
 button {
   border: 0;
@@ -44,21 +48,25 @@ button {
   width: 120px;
   color: rgb(0, 0, 0);
   background: transparent;
-  border-left: 1px solid rgb(0, 0, 0);
+
   border-radius: 0 3px 3px 0;
 }
-button:hover {
+.submit-btn:hover {
   background: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
 }
-button:active {
+.submit-btn:active {
   box-shadow: 0px 0px 12px 0px rgb(0, 0, 0);
 }
-button:focus {
+.submit-btn:focus {
   outline: 0;
 }
 
 img {
   height: 100px;
   width: 100px;
+}
+
+.location {
+  height: 25px;
 }

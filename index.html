@@ -5,15 +5,27 @@
     <meta name="viewport" content="width=device-width" />
     <title>Weather</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script
+      src="https://kit.fontawesome.com/d96a60ba13.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <h1>Check your current weather</h1>
     <form>
-      <input type="text" placeholder="enter your city" name="search" />
-      <button type="submit">Submit</button>
+      <button>
+        <img class="location" src="./images/location-pin-solid.svg" />
+      </button>
+      <input
+        type="text"
+        placeholder="enter city or press button"
+        name="search"
+      />
+      <button class="submit-btn" type="submit">Submit</button>
     </form>
     <div id="content"></div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./index.js"></script>
   </body>

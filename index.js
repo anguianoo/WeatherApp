@@ -1,7 +1,7 @@
 const inputText = document.querySelector("input")
 // const content = document.getElementById('content')
 const form = document.querySelector("form")
-
+const location = document.getElementsByClassName("location")
 const apiKey = "6dda46b7b0578a12825d47e372232005"
 // 0K − 273.15 = -273.1°C
 // C = K - 273.15
@@ -41,6 +41,11 @@ form.addEventListener("submit", e => {
   getGeoLocation(inputText.value)
 })
 
+location.addEventListener("click" , e => {
+  e.preventDefault();
+  // getCurrentPosition() will give you longitude and latitude
+  // then use those values to input into getWeather(long, lat)
+})
 // fetch(`https://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=6dda46b7b0578a12825d47e372232005`).then(res => res.json()).then(json => console.log(json[0]))
 
 // fetch(`https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=6dda46b7b0578a12825d47e372232005`).then(res => res.json()).then(json =>  content.innerHTML = json.weather[0]['main'])
