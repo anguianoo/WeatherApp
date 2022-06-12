@@ -71,6 +71,12 @@ img {
   height: 25px;
 }
 
+.Dark {
+  display: flex;
+  background-color: black;
+  color: white;
+}
+
 .dark {
   color: white;
   background-color: black;

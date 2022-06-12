@@ -1,6 +1,7 @@
 const inputText = document.querySelector("input");
 // const content = document.getElementById('content')
 const form = document.querySelector("form");
+const body = document.querySelector("body");
 const myLocation = document.querySelector("img");
 const apiKey = "6dda46b7b0578a12825d47e372232005";
 // 0K − 273.15 = -273.1°C
@@ -22,6 +23,7 @@ async function getWeather(lat, lon) {
     .then((json) => displayWeather(json));
 }
 async function displayWeather(forcast) {
+  console.log(forcast);
   let weather = forcast["weather"];
   let weatherIcon = weather[0]["icon"];
   let weatherDescription = forcast["weather"][0]["description"];
@@ -30,6 +32,7 @@ async function displayWeather(forcast) {
   // convert kelvin to celsius
   let celsius = tempInCelsuis - numberForKelvinConversion;
   const card = `
+  <h2>${forcast.name}</h2>
   <h2>${celsius.toFixed()} °C</h2>
   <p>${weatherDescription}</p>
 <img src=${`http://openweathermap.org/img/wn/${weatherIcon}@2x.png`} alt=${weatherDescription}/>
@@ -63,5 +66,11 @@ myLocation.addEventListener("click", (e) => {
 const darkModeBtn = document.getElementsByClassName("Dark")[0];
 
 darkModeBtn.addEventListener("click", (e) => {
-  document.querySelector("body").classList.add("dark");
+  // if body has a class name of dark, remove dark
+  if (body.classList.contains("dark")) {
+    body.classList.remove("dark");
+  } else {
+    body.classList.add("dark");
+  }
+  // document.querySelector("body").classList.add("dark");
 });
